@@ -3,6 +3,13 @@ name = "treesheets-gitpage"
 version = "0.1.0"
 edition = "2024"
 
+[package.metadata.leptos]
+site-root = "dist"
+site-pkg-dir = "pkg"
+site-addr = "" 
+# 添加基础路径配置
+base_path = "${GITHUB_REPOSITORY#*/}"
+
 [dependencies]
 console_error_panic_hook = "0.1.7"
 gloo-net = "0.6.0"
