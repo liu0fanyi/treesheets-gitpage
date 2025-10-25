@@ -7,3 +7,5 @@
 * trunk serve --open
 
 ## 其他添加在第一次提交里
+
+## 参考这个把leptos部署到gitpage上,https://github.com/diversable/deploy_leptos_csr_to_gh_pages/tree/main
