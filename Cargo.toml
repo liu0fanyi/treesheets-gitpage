@@ -9,6 +9,7 @@ site-pkg-dir = "pkg"
 site-addr = "" 
 # GitHub Pages部署需要正确的base路径
 base_path = "/treesheets-gitpage"
+static-dir = "public"  # 关键配置：包含静态文件
 
 [dependencies]
 console_error_panic_hook = "0.1.7"
