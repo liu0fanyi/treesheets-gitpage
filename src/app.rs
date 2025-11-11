@@ -9,8 +9,15 @@ use leptos_router::{
 pub fn App() -> impl IntoView {
     provide_meta_context();
 
+    // 开发环境用 "/"，GitHub Pages 生产环境用 "/my-repo-name"
+    let base = if cfg!(debug_assertions) {
+        ""
+    } else {
+        "/treesheets-gitpage" // ← 替换为你的仓库名
+    };
+
     view! {
-        <Router>
+        <Router base=base>
             <Routes fallback=|| "Page not found.">
                 <Route path=StaticSegment("") view=Home/>
             </Routes>
