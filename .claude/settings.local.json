@@ -4,7 +4,10 @@
       "Bash(trunk build:*)",
       "Bash(ls:*)",
       "Bash(rm:*)",
-      "Bash(./trunk build:*)"
+      "Bash(./trunk build:*)",
+      "Bash(find:*)",
+      "Bash(npm install)",
+      "Bash(rustup target add:*)"
     ],
     "deny": []
   }
