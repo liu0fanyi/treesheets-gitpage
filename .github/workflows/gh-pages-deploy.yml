@@ -43,10 +43,8 @@ jobs:
       - name: lint
         run: cargo clippy & cargo fmt
 
-
-      # If using tailwind...
-      - name: Download and install tailwindcss binary
-        run: npm install && npx @tailwindcss/cli -i input.css -o dist/tailwind.css
+      - name: Install npm dependencies
+        run: npm install
 
 
       - name: Download and install Trunk binary
