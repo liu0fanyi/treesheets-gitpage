@@ -5,6 +5,10 @@
     <link data-trunk rel="rust" data-wasm-opt="z" />
     <link data-trunk rel="icon" type="image/ico" href="public/favicon.ico" />
     <link data-trunk rel="tailwind-css" href="input.css" />
+    <!-- 关键：复制整个 doc 目录到 dist/doc -->
+    <link data-trunk rel="copy-dir" href="public/doc" />
+    <!-- 如果需要复制单个图片文件 -->
+    <link data-trunk rel="copy-file" href="public/f5a596b869.png" />
     <title>Leptos • Counter with Tailwind</title>
   </head>
 
