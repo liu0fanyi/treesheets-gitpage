@@ -7,8 +7,8 @@ edition = "2024"
 site-root = "dist"
 site-pkg-dir = "pkg"
 site-addr = "" 
-# 添加基础路径配置 - 使用相对路径而不是绝对路径
-base_path = "."
+# GitHub Pages部署需要正确的base路径
+base_path = "/treesheets-gitpage"
 
 [dependencies]
 console_error_panic_hook = "0.1.7"

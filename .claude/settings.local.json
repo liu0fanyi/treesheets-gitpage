@@ -7,7 +7,9 @@
       "Bash(./trunk build:*)",
       "Bash(find:*)",
       "Bash(npm install)",
-      "Bash(rustup target add:*)"
+      "Bash(rustup target add:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:liu0fanyi.github.io)"
     ],
     "deny": []
   }
