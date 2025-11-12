@@ -33,32 +33,30 @@ pub fn App() -> impl IntoView {
 
 #[component]
 fn Home() -> impl IntoView {
-    let (value, set_value) = signal(0);
-
     view! {
         <Title text="Leptos + Tailwindcss"/>
         <main>
             <div class="bg-gradient-to-tl from-blue-800 to-blue-500 text-white font-mono flex flex-col min-h-screen">
-                {/* 原有计数器 */}
-                <div class="flex flex-row-reverse flex-wrap m-auto">
-                    <button on:click=move |_| set_value.update(|v| *v += 1) class="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg bg-blue-700 border-blue-800 text-white">
-                        "+"
-                    </button>
-                    <button class="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg bg-blue-800 border-blue-900 text-white">
-                        {value}
-                    </button>
-                    <button
-                        on:click=move |_| set_value.update(|v| *v -= 1)
-                        class="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg bg-blue-700 border-blue-800 text-white"
-                        class:invisible=move || value.get() < 1
-                    >
-                        "-"
-                    </button>
+                {/* 友链 - 添加到页面 */}
+                <div class="m-auto mt-8 w-full max-w-2xl px-4">
+                    <h2 class="text-2xl font-bold mb-4">朋友</h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a
+                                href="https://deceptionisle.bearblog.dev/"
+                                target="_blank" // 新标签页打开
+                                rel="noopener noreferrer" // 安全属性
+                                class="block p-3 bg-blue-600 hover:bg-blue-700 rounded transition-colors duration-200 shadow-md"
+                            >
+                                陈师
+                            </a>
+                        </li>
+                   </ul>
                 </div>
 
                 {/* 文档列表 - 添加到页面 */}
                 <div class="m-auto mt-8 w-full max-w-2xl px-4">
-                    <h2 class="text-2xl font-bold mb-4">Documentation Files</h2>
+                    <h2 class="text-2xl font-bold mb-4">一些</h2>
                     <DocList/>
                 </div>
             </div>
