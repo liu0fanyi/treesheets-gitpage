@@ -5,8 +5,10 @@ use leptos_router::{
     components::{Route, Router, Routes},
 };
 
+use crate::article::ArticleView;
+
 // 引入构建脚本生成的文件列表
-include!(concat!(env!("OUT_DIR"), "/doc_files.rs"));
+include!(concat!(env!("OUT_DIR"), "/doc_file_list.rs"));
 
 // 获取基础路径
 fn base_path() -> &'static str {
@@ -25,7 +27,7 @@ pub fn App() -> impl IntoView {
         <Router base=base_path()>
             <Routes fallback=|| "Page not found.">
                 <Route path=StaticSegment("") view=Home/>
-                {/* 静态文件由 GitHub Pages 直接服务，无需额外路由 */}
+                <Route path=StaticSegment("article") view=ArticleView/>
             </Routes>
         </Router>
     }
@@ -34,7 +36,7 @@ pub fn App() -> impl IntoView {
 #[component]
 fn Home() -> impl IntoView {
     view! {
-        <Title text="Leptos + Tailwindcss"/>
+        <Title text="喔我窝"/>
         <main>
             <div class="bg-gradient-to-tl from-blue-800 to-blue-500 text-white font-mono flex flex-col min-h-screen">
                 {/* 友链 - 添加到页面 */}
@@ -75,8 +77,9 @@ fn DocList() -> impl IntoView {
         >
             <ul class="space-y-2">
                 {DOC_FILES.iter().map(|filename| {
-                    // 生成完整链接（GitHub Pages 会直接服务这些静态文件）
-                    let href = format!("{}/doc/{}", base, filename);
+                    // 生成路由链接
+                    let name = filename.strip_suffix(".html").unwrap_or(filename);
+                    let href = format!("{}/article?name={}", base, name);
                     // 美化显示名称：移除 .html 后缀，替换 -/_ 为空格
                     let display_name = filename
                         .strip_suffix(".html")
@@ -87,7 +90,6 @@ fn DocList() -> impl IntoView {
                         <li>
                             <a
                                 href=href
-                                target="_blank" // 在新标签页打开
                                 class="block p-3 bg-blue-600 hover:bg-blue-700 rounded transition-colors duration-200 shadow-md"
                             >
                                 {display_name}

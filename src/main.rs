@@ -1,4 +1,5 @@
 mod app;
+mod article;
 
 use app::*;
 use leptos::{logging, mount};
