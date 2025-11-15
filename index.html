@@ -4,16 +4,6 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function(){
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
-          history.replaceState(null, null, redirect);
-        }
-      })();
-    </script>
-
     <link data-trunk rel="rust" data-wasm-opt="z" />
     <link data-trunk rel="icon" type="image/ico" href="public/favicon.ico" />
     <link data-trunk rel="tailwind-css" href="input.css" />
