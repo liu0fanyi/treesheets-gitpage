@@ -9,6 +9,15 @@
     <!-- 关键：复制整个 doc 目录到 dist/doc -->
     <link data-trunk rel="copy-dir" href="public/doc" />
     <title>Leptos • Counter with Tailwind</title>
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
 
   <body></body>
