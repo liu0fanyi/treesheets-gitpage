@@ -1,0 +1,8 @@
+
+[build]
+public_url = "/treesheets-gitpage/"
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", "cp dist/index.html dist/404.html"]
