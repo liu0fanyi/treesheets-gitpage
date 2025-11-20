@@ -84,14 +84,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Deploy to Cloudflare Pages
-      - name: Deploy to Cloudflare Pages
-        if: success()
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: treesheets-gitpage
-          directory: dist
-          # Optional: Enable this if you want to have a custom domain
-          # branch: main
+      # 注释掉 Cloudflare Pages 部署，使用独立的 workflow
+      # - name: Deploy to Cloudflare Pages
+      #   if: success()
+      #   uses: cloudflare/pages-action@v1
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     projectName: treesheets-gitpage
+      #     directory: dist
+      #     # Optional: Enable this if you want to have a custom domain
+      #     # branch: main
